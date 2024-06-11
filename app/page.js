@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ImageSlideshow from "@/assets/components/images/image-slideshow";
+import ImageSlideshow from "@/components/images/image-slideshow";
 
 import classes from "./page.module.css";
 
