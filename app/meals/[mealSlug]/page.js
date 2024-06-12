@@ -10,7 +10,7 @@ export default function MealDetailsPage({ params }) {
     notFound();
   }
 
-  meal.instructions = meal.instructions.replace(/\n/g, "<br />");
+  meal.instructions = meal ? meal.instructions.replace(/\n/g, "<br />") : [];
 
   return (
     <>
@@ -21,14 +21,14 @@ export default function MealDetailsPage({ params }) {
         <div className={styles.headerText}>
           <h1>{meal.title}</h1>
           <p className={styles.creator}>
-            by <a href={`mailto:${mail.creator_email}`}>{meal.creator}</a>
+            by <a href={`mailto:${meal.creator_email}`}>{meal.creator}</a>
           </p>
           <p className={styles.summary}>{meal.summary}</p>
         </div>
       </header>
       <main>
         <p
-          className={styles.instuctions}
+          className={styles.instructions}
           dangerouslySetInnerHTML={{
             __html: meal.instructions,
           }}
